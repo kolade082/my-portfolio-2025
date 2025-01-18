@@ -8,18 +8,16 @@ import './App.css';
 import Header from './components/Header';
 // import About from './pages/About';
 // import Resume from './pages/Resume';
-// import Services from './pages/Services';
 // import Portfolio from './pages/Portfolio';
 // import Contact from './pages/Contact';
 
 function App() {
   const [aboutActive, setAboutActive] = useState(false);
   const homeRef = useRef();
-  const aboutRef = useRef();
-  const resumeRef = useRef();
-  const serviceRef = useRef();
-  const portfolioRef = useRef();
-  const contactRef = useRef();
+  // const aboutRef = useRef();
+  // const resumeRef = useRef();
+  // const portfolioRef = useRef();
+  // const contactRef = useRef();
 
   const sections = [
     {
@@ -27,31 +25,26 @@ function App() {
       ref: homeRef,
       active: true,
     },
-    {
-      name: 'about',
-      ref: aboutRef,
-      active: false,
-    },
-    {
-      name: 'resume',
-      ref: resumeRef,
-      active: false,
-    },
-    {
-      name: 'services',
-      ref: serviceRef,
-      active: false,
-    },
-    {
-      name: 'portfolio',
-      ref: portfolioRef,
-      active: false,
-    },
-    {
-      name: 'contact',
-      ref: contactRef,
-      active: false,
-    },
+    // {
+    //   name: 'about',
+    //   ref: aboutRef,
+    //   active: false,
+    // },
+    // {
+    //   name: 'resume',
+    //   ref: resumeRef,
+    //   active: false,
+    // },
+    // {
+    //   name: 'portfolio',
+    //   ref: portfolioRef,
+    //   active: false,
+    // },
+    // {
+    //   name: 'contact',
+    //   ref: contactRef,
+    //   active: false,
+    // },
   ];
 
   const handleSectionActive = target => {

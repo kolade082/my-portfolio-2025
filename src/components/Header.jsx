@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Header.css';
+import './header.css';
 import navListData from '../data/navListData';
 import NavListItem from './NavListItem';
 import SocialLinksItem from './SocialLinksItem';
