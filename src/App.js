@@ -64,10 +64,10 @@ function App() {
         reference={homeRef}
         aboutActive={setAboutActive}
       />
-      {/* <About reference={aboutRef} aboutActive={aboutActive} />
-      <Resume reference={resumeRef} />
-      <Portfolio reference={portfolioRef} />
-      <Contact reference={contactRef} /> */}
+      {/* <About reference={aboutRef} aboutActive={aboutActive} /> */}
+      {/* <Resume reference={resumeRef} /> */}
+      {/* <Portfolio reference={portfolioRef} /> */}
+      {/* <Contact reference={contactRef} /> */}
     </>
   );
 }
