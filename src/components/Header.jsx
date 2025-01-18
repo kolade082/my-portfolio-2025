@@ -81,7 +81,7 @@ function Header({ sectionActive, reference, aboutActive }) {
           <SocialLinksItem name="github" url="https://github.com/kolade082" />
           <SocialLinksItem name="instagram" url="https://www.instagram.com/kolade_oo/" />
           <SocialLinksItem name="linkedin" url="https://www.linkedin.com/in/kolade-oluwadara-87563a245/" />
-          <SocialLinksItem name="envelope" url="koladedara@outlook.com" />
+          <SocialLinksItem name="envelope" url="koladeoluwadara.com" />
         </div>
       </div>
     </header>
