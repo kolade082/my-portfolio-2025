@@ -1,12 +1,8 @@
 # My Personal Portfolio
 
-Welcome to my personal portfolio website! This portfolio showcases my skills, projects, and experiences as a Software Engineer. The website is built using **React** with support for **Dark/Light Mode Toggle** and **Animations**.
+Welcome to my personal portfolio website!
 
 ## Features
-
-- **Dark/Light Mode Toggle**: Switch between dark and light themes based on your preference. The theme is saved in local storage, so it persists across sessions.
-- **Animations**: Smooth animations for different sections of the page using **Framer Motion**.
-- **Responsive Design**: The portfolio is mobile-friendly and adjusts well to different screen sizes.
 
 ## Getting Started
 
@@ -26,3 +22,23 @@ Ensure you have the following installed:
    ```bash
    git clone https://github.com/kolade-oluwadara/my-portfolio-2025.git
    ```
+
+2. Navigate into the project directory:
+
+   ```bash
+   cd my-portfolio-2025
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+This will launch the app in your default browser at http://localhost:3000.
