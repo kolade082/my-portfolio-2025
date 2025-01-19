@@ -6,7 +6,7 @@ import 'boxicons/css/boxicons.min.css';
 import React, { useRef, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
-// import About from './pages/About';
+import About from './pages/About';
 // import Resume from './pages/Resume';
 // import Portfolio from './pages/Portfolio';
 // import Contact from './pages/Contact';
@@ -14,7 +14,7 @@ import Header from './components/Header';
 function App() {
   const [aboutActive, setAboutActive] = useState(false);
   const homeRef = useRef();
-  // const aboutRef = useRef();
+  const aboutRef = useRef();
   // const resumeRef = useRef();
   // const portfolioRef = useRef();
   // const contactRef = useRef();
@@ -25,11 +25,11 @@ function App() {
       ref: homeRef,
       active: true,
     },
-    // {
-    //   name: 'about',
-    //   ref: aboutRef,
-    //   active: false,
-    // },
+    {
+      name: 'about',
+      ref: aboutRef,
+      active: false,
+    },
     // {
     //   name: 'resume',
     //   ref: resumeRef,
@@ -64,7 +64,7 @@ function App() {
         reference={homeRef}
         aboutActive={setAboutActive}
       />
-      {/* <About reference={aboutRef} aboutActive={aboutActive} /> */}
+      <About reference={aboutRef} aboutActive={aboutActive} />
       {/* <Resume reference={resumeRef} /> */}
       {/* <Portfolio reference={portfolioRef} /> */}
       {/* <Contact reference={contactRef} /> */}
