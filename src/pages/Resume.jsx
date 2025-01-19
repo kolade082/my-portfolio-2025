@@ -13,9 +13,9 @@ function Resume({ reference }) {
             <div className="resume-item pb-0">
               <h4>Kolade Oluwadara</h4>
               <p>
-                <em>
+                {/* <em>
                   Loading ...
-                </em>
+                </em> */}
               </p>
               <ul>
                 <li>London, United Kingdom</li>
