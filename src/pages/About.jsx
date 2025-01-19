@@ -20,8 +20,16 @@ function About({ reference, aboutActive }) {
               Hi, I'm Kolade! I like to build cool stuff on the web 🌐, solve
               real-world problems 💡, and bring ideas to life 🚀. Whether it’s
               creating user-friendly web apps, crafting APIs, or collaborating
-              at hackathons (Literally the same header in my GitHub 😭😭😭, I'm
-              out of words).
+              at hackathons (Literally the same header in my{" "}
+              <a
+                href="https://github.com/kolade082"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                GitHub
+              </a>{" "}
+              😭😭😭, I'm out of words).
             </p>
             <div className="row">
               <div className="col-lg-6">

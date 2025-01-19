@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './header.css';
-import navListData from '../data/navListData';
-import NavListItem from './NavListItem';
-import SocialLinksItem from './SocialLinksItem';
+import React, { useState } from "react";
+import "./header.css";
+import navListData from "../data/navListData";
+import NavListItem from "./NavListItem";
+import SocialLinksItem from "./SocialLinksItem";
 
 function Header({ sectionActive, reference, aboutActive }) {
   const [navList, setNavList] = useState(navListData);
@@ -16,19 +16,19 @@ function Header({ sectionActive, reference, aboutActive }) {
   };
 
   const handleNavOnClick = (id, target) => {
-    if (target === 'header') {
+    if (target === "header") {
       setHeader(false);
     } else {
       setHeader(true);
     }
 
-    if (target === 'about') {
+    if (target === "about") {
       aboutActive(true);
     } else {
       aboutActive(false);
     }
 
-    const newNavList = navList.map(nav => {
+    const newNavList = navList.map((nav) => {
       nav.active = false;
       if (nav._id === id) nav.active = true;
       return nav;
@@ -41,22 +41,22 @@ function Header({ sectionActive, reference, aboutActive }) {
     <header
       id="header"
       ref={reference}
-      className={header ? 'header-top' : null}
+      className={header ? "header-top" : null}
     >
       <div className="container">
         <h1>
-          <a href="/">Heyyyyyy! 👋 I'm Kolade  </a>
+          <a href="/">Kolade Oluwadara</a>
         </h1>
         <h2>
-        🛠️ I love solving problems ... <span> I think </span> 
+          Heyyyyyy! 👋 This is my <span>personal</span> website. Make sure to surf around!
         </h2>
 
         <nav
           id="navbar"
-          className={`navbar ${navMobile ? 'navbar-mobile' : null}`}
+          className={`navbar ${navMobile ? "navbar-mobile" : null}`}
         >
           <ul>
-            {navList.map(item => (
+            {navList.map((item) => (
               <NavListItem
                 key={item._id}
                 item={item}
@@ -79,8 +79,14 @@ function Header({ sectionActive, reference, aboutActive }) {
 
         <div className="social-links">
           <SocialLinksItem name="github" url="https://github.com/kolade082" />
-          <SocialLinksItem name="instagram" url="https://www.instagram.com/kolade_oo/" />
-          <SocialLinksItem name="linkedin" url="https://www.linkedin.com/in/kolade-oluwadara-87563a245/" />
+          <SocialLinksItem
+            name="instagram"
+            url="https://www.instagram.com/kolade_oo/"
+          />
+          <SocialLinksItem
+            name="linkedin"
+            url="https://www.linkedin.com/in/kolade-oluwadara-87563a245/"
+          />
           <SocialLinksItem name="envelope" url="koladeoluwadara.com" />
         </div>
       </div>
