@@ -20,8 +20,8 @@ const certificationsData = [
   {
     _id: 3,
     title: "Responsive Web Design",
-    issuedBy: "reeCodeCamp",
-    issuerImage: require("../images/free-code-camp-logo.svg"),
+    issuedBy: "FreeCodeCamp",
+    issuerImage: require("../images/free-code-camp-logo.svg.png"),
     date: "Oct 2024",
     credentialId: "darkay-rwd",
     link: "https://freecodecamp.org/certification/darkay/responsive-web-design",
