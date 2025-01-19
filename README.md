@@ -2,8 +2,6 @@
 
 Welcome to my personal portfolio website!
 
-## Features
-
 ## Getting Started
 
 To get started with this project locally, follow these steps:

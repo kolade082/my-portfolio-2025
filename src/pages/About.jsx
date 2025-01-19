@@ -2,6 +2,7 @@ import React from "react";
 import "./about.css";
 import SectionTitle from "../components/SectionTitle";
 import profileImg from "../images/profile-img-brown-bg.jpg";
+import Skills from "../components/Skills";
 
 function About({ reference, aboutActive }) {
   return (
@@ -75,6 +76,7 @@ function About({ reference, aboutActive }) {
           </div>
         </div>
       </div>
+      <Skills active={aboutActive} />
     </section>
   );
 }
