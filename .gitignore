@@ -19,6 +19,9 @@
 .env.test.local
 .env.production.local
 
+/email-backend/*
+!email-backend/server.js
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
