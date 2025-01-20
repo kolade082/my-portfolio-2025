@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio .under-construction {
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+  }
+  
+  .portfolio .under-construction i.bx {
+    font-size: 5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+  }
+  
+  .portfolio .under-construction h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .portfolio .under-construction p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+  }
+  
