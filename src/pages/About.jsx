@@ -36,10 +36,6 @@ function About({ reference, aboutActive }) {
                 <ul>
                   <li>
                     <i className="bi bi-chevron-right"></i>{" "}
-                    <strong>Birthday:</strong> <span>12 April 2003</span>
-                  </li>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>{" "}
                     <strong>Website:</strong> <span>www.koldadedara.com</span>
                   </li>
                   <li>
@@ -50,14 +46,22 @@ function About({ reference, aboutActive }) {
                     <i className="bi bi-chevron-right"></i>{" "}
                     <strong>City:</strong> <span>London, United Kingdom</span>
                   </li>
+                  {/* <li>
+                    <i className="bi bi-chevron-right"></i>{" "}
+                    <strong>Freelance:</strong> <span>Available</span>
+                  </li> */}
                 </ul>
               </div>
               <div className="col-lg-6">
                 <ul>
-                  <li>
+                <li>
+                    <i className="bi bi-chevron-right"></i>{" "}
+                    <strong>DOB:</strong> <span>12 April</span>
+                  </li>
+                  {/* <li>
                     <i className="bi bi-chevron-right"></i>{" "}
                     <strong>Age:</strong> <span>21</span>
-                  </li>
+                  </li> */}
                   <li>
                     <i className="bi bi-chevron-right"></i>{" "}
                     <strong>Degree:</strong>{" "}
@@ -68,10 +72,7 @@ function About({ reference, aboutActive }) {
                     <strong>Email:</strong>{" "}
                     <span>koladeoluwadara@gmail.com</span>
                   </li>
-                  <li>
-                    <i className="bi bi-chevron-right"></i>{" "}
-                    <strong>Freelance:</strong> <span>Available</span>
-                  </li>
+                  
                 </ul>
               </div>
             </div>

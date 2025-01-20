@@ -136,3 +136,12 @@ section .container {
   text-transform: uppercase;
   color: #ffffff;
 }
+
+.Toastify__toast-container {
+  z-index: 9999;         
+  position: fixed;      
+  top: 20px;              
+  right: 20px;            
+  width: auto;            
+  max-width: 100%;
+}
