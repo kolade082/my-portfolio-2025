@@ -9,7 +9,7 @@ import Header from './components/Header';
 import About from './pages/About';
 import Resume from './pages/Resume';
 // import Portfolio from './pages/Portfolio';
-// import Contact from './pages/Contact';
+import Contact from './pages/Contact';
 
 function App() {
   const [aboutActive, setAboutActive] = useState(false);
@@ -17,7 +17,7 @@ function App() {
   const aboutRef = useRef();
   const resumeRef = useRef();
   // const portfolioRef = useRef();
-  // const contactRef = useRef();
+  const contactRef = useRef();
 
   const sections = [
     {
@@ -40,11 +40,11 @@ function App() {
     //   ref: portfolioRef,
     //   active: false,
     // },
-    // {
-    //   name: 'contact',
-    //   ref: contactRef,
-    //   active: false,
-    // },
+    {
+      name: 'contact',
+      ref: contactRef,
+      active: false,
+    },
   ];
 
   const handleSectionActive = target => {
@@ -67,7 +67,7 @@ function App() {
       <About reference={aboutRef} aboutActive={aboutActive} />
       <Resume reference={resumeRef} />
       {/* <Portfolio reference={portfolioRef} /> */}
-      {/* <Contact reference={contactRef} /> */}
+      <Contact reference={contactRef} />
     </>
   );
 }

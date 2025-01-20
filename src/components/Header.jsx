@@ -87,7 +87,7 @@ function Header({ sectionActive, reference, aboutActive }) {
             name="linkedin"
             url="https://www.linkedin.com/in/kolade-oluwadara-87563a245/"
           />
-          <SocialLinksItem name="envelope" url="koladeoluwadara.com" />
+          <SocialLinksItem name="envelope" url="koladedara@outlook.com" />
         </div>
       </div>
     </header>
