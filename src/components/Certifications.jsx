@@ -24,15 +24,20 @@ function Certifications() {
                 <p>
                   <strong>Credential ID:</strong> {cert.credentialId}
                 </p>
-                <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                {/* <a href={cert.link} target="_blank" rel="noopener noreferrer">
                   View Certificate
-                </a>
+                </a> */}
               </div>
+              <div className="issuer-info-right">
               <img
                 src={cert.issuerImage}
                 alt={cert.issuedBy}
                 className="issuer-logo"
               />
+              <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                  View Certificate
+                </a>
+                </div>
             </div>
           </div>
         ))}
