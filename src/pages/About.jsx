@@ -1,7 +1,7 @@
 import React from "react";
 import "./about.css";
 import SectionTitle from "../components/SectionTitle";
-import profileImg from "../images/profile-img-brown-bg.jpg";
+import profileImg from "../images/profile-img.png";
 import Skills from "../components/Skills";
 import Certifications from "../components/Certifications";
 
