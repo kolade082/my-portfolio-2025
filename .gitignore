@@ -21,6 +21,7 @@
 
 /email-backend/*
 !email-backend/server.js
+email-backend/node_modules/
 
 npm-debug.log*
 yarn-debug.log*
