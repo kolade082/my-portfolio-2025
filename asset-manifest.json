@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/my-portfolio-2025/static/css/main.546dabfb.css",
+    "main.js": "/my-portfolio-2025/static/js/main.e77f5ea3.js",
+    "static/js/488.a989bcbd.chunk.js": "/my-portfolio-2025/static/js/488.a989bcbd.chunk.js",
+    "static/media/remixicon.svg?t=1734404658139": "/my-portfolio-2025/static/media/remixicon.df9902a6df13645438e1.svg",
+    "static/media/boxicons.svg": "/my-portfolio-2025/static/media/boxicons.9e2b21b135bc7d4c803f.svg",
+    "static/media/profile-img-brown-bg.jpg": "/my-portfolio-2025/static/media/profile-img-brown-bg.ef46e38fb2f0382f4fc3.jpg",
+    "static/media/remixicon.eot?t=1734404658139": "/my-portfolio-2025/static/media/remixicon.29066d810a74e994be27.eot",
+    "static/media/remixicon.ttf?t=1734404658139": "/my-portfolio-2025/static/media/remixicon.868d1a768f4762dbcc3e.ttf",
+    "static/media/main-bg.jpg": "/my-portfolio-2025/static/media/main-bg.67ac9229d1b94e24cb70.jpg",
+    "static/media/boxicons.eot": "/my-portfolio-2025/static/media/boxicons.65a8ce52fc5427e8f94d.eot",
+    "static/media/boxicons.woff": "/my-portfolio-2025/static/media/boxicons.d12afc36557395143e4b.woff",
+    "static/media/boxicons.ttf": "/my-portfolio-2025/static/media/boxicons.db9ddb1898dbd76badca.ttf",
+    "static/media/remixicon.woff?t=1734404658139": "/my-portfolio-2025/static/media/remixicon.ce82bb240fef24f93f95.woff",
+    "static/media/remixicon.woff2?t=1734404658139": "/my-portfolio-2025/static/media/remixicon.bb211d855a1864aa5b67.woff2",
+    "static/media/bootstrap-icons.woff?": "/my-portfolio-2025/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/my-portfolio-2025/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/boxicons.woff2": "/my-portfolio-2025/static/media/boxicons.df635aaf04cd75132f62.woff2",
+    "static/media/udemy-logo.svg.png": "/my-portfolio-2025/static/media/udemy-logo.svg.cda09160f9483eaae771.png",
+    "static/media/free-code-camp-logo.svg.png": "/my-portfolio-2025/static/media/free-code-camp-logo.svg.cc98822c11b81a38c7fa.png",
+    "static/media/forage-logo.png": "/my-portfolio-2025/static/media/forage-logo.3f70c1a7e691aa549523.png",
+    "index.html": "/my-portfolio-2025/index.html",
+    "main.546dabfb.css.map": "/my-portfolio-2025/static/css/main.546dabfb.css.map",
+    "main.e77f5ea3.js.map": "/my-portfolio-2025/static/js/main.e77f5ea3.js.map",
+    "488.a989bcbd.chunk.js.map": "/my-portfolio-2025/static/js/488.a989bcbd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.546dabfb.css",
+    "static/js/main.e77f5ea3.js"
+  ]
+}
