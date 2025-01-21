@@ -33,7 +33,7 @@ function ContactForm() {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/send-email", {
+      const response = await fetch("https://my-portfolio-2025-backend-c498a232e553.herokuapp.com/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
