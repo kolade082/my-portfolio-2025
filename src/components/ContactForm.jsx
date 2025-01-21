@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./contactForm.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 import emailjs from "@emailjs/browser";
 
 function ContactForm() {
@@ -23,11 +22,13 @@ function ContactForm() {
   const handleSubmitMessage = async (e) => {
     e.preventDefault();
 
-    toast.info("Attempting to send the message...");
-    
     if (text.fullname === "" || text.email === "" || text.message === "") {
       setText({ ...text, result: "incomplete" });
-      toast.error("Please fill in all the details.");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please fill in all the details.",
+      });
       return;
     }
 
@@ -48,86 +49,83 @@ function ContactForm() {
       const data = await response.json();
 
       if (response.status === 200) {
-        setText({ ...initialState, result: "success" });
-        toast.success("Message sent successfully!");
+        setText(initialState); 
+        Swal.fire({
+          icon: "success",
+          title: "Message sent!",
+          text: "Your message was sent successfully.",
+        });
       } else {
-        setText({ ...text, result: "error" });
-        toast.error("Failed to send the message. Please try again later.");
+        Swal.fire({
+          icon: "error",
+          title: "Failed!",
+          text: "Failed to send the message. Please try again later.",
+        });
       }
     } catch (error) {
       console.error("Error:", error);
-      setText({ ...text, result: "error" });
-      toast.error("Failed to send the message. Please try again later.");
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Failed to send the message. Please try again later.",
+      });
     }
   };
 
   return (
-    <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      <form className="contact-form mt-4" onSubmit={handleSubmitMessage}>
-        <div className="row">
-          <div className="col-md-6 form-group">
-            <input
-              type="text"
-              name="fullname"
-              value={text.fullname}
-              onChange={changeText}
-              className="form-control"
-              id="name"
-              placeholder="Your Name"
-            />
-          </div>
-          <div className="col-md-6 form-group mt-3 mt-md-0">
-            <input
-              type="email"
-              className="form-control"
-              name="email"
-              value={text.email}
-              onChange={changeText}
-              id="email"
-              placeholder="Your Email"
-            />
-          </div>
-        </div>
-        <div className="form-group mt-3">
+    <form className="contact-form mt-4" onSubmit={handleSubmitMessage}>
+      <div className="row">
+        <div className="col-md-6 form-group">
           <input
             type="text"
-            className="form-control"
-            name="subject"
-            value={text.subject}
+            name="fullname"
+            value={text.fullname}
             onChange={changeText}
-            id="subject"
-            placeholder="Subject"
+            className="form-control"
+            id="name"
+            placeholder="Your Name"
           />
         </div>
-        <div className="form-group mt-3">
-          <textarea
+        <div className="col-md-6 form-group mt-3 mt-md-0">
+          <input
+            type="email"
             className="form-control"
-            name="message"
-            value={text.message}
+            name="email"
+            value={text.email}
             onChange={changeText}
-            rows="6"
-            placeholder="Message"
-          ></textarea>
+            id="email"
+            placeholder="Your Email"
+          />
         </div>
-        {text.result === "incomplete" && (
-          <div className="error-message">Please fill in all above details</div>
-        )}
-        <div className="text-center">
-          <button type="submit">Send Message</button>
-        </div>
-      </form>
-    </>
+      </div>
+      <div className="form-group mt-3">
+        <input
+          type="text"
+          className="form-control"
+          name="subject"
+          value={text.subject}
+          onChange={changeText}
+          id="subject"
+          placeholder="Subject"
+        />
+      </div>
+      <div className="form-group mt-3">
+        <textarea
+          className="form-control"
+          name="message"
+          value={text.message}
+          onChange={changeText}
+          rows="6"
+          placeholder="Message"
+        ></textarea>
+      </div>
+      {/* {text.result === "incomplete" && (
+        <div className="error-message">Please fill in all above details</div>
+      )} */}
+      <div className="text-center">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
   );
 }
 
