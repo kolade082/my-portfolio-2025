@@ -23,7 +23,7 @@ function Contact({ reference }) {
               <h3>Social Profiles</h3>
               <div className="social-links">
                 <a href="https://github.com/kolade082" className="github">
-                  <i className="bi bi-twitter-x"></i>
+                  <i className="bi bi-github"></i>
                 </a>
                 <a href="https://www.instagram.com/kolade_oo/" className="instagram">
                   <i className="bi bi-instagram"></i>

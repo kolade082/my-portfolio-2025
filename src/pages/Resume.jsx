@@ -9,7 +9,7 @@ function Resume({ reference }) {
         <SectionTitle title="Resume" subtitle="Here's My Resume" />
         <div className="row">
           <div className="col-lg-6">
-            <h3 className="resume-title">Sumary</h3>
+            {/* <h3 className="resume-title">Summary</h3> */}
             <div className="resume-item pb-0">
               <h4>Kolade Oluwadara</h4>
               <p>
