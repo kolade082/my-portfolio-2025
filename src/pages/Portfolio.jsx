@@ -10,7 +10,6 @@ function Portfolio({ reference }) {
         <div className="under-construction">
           <i className="bx bx-wrench"></i>
           <h2>Coming Soon!</h2>
-          
         </div>
       </div>
     </section>
