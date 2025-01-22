@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.851cc7ef.css",
+    "main.css": "/static/css/main.33eb999d.css",
     "main.js": "/static/js/main.a18ad604.js",
     "static/js/488.a989bcbd.chunk.js": "/static/js/488.a989bcbd.chunk.js",
     "static/media/profile-img.png": "/static/media/profile-img.9f74c17e5616928716c0.png",
@@ -21,12 +21,12 @@
     "static/media/free-code-camp-logo.svg.png": "/static/media/free-code-camp-logo.svg.cc98822c11b81a38c7fa.png",
     "static/media/forage-logo.png": "/static/media/forage-logo.3f70c1a7e691aa549523.png",
     "index.html": "/index.html",
-    "main.851cc7ef.css.map": "/static/css/main.851cc7ef.css.map",
+    "main.33eb999d.css.map": "/static/css/main.33eb999d.css.map",
     "main.a18ad604.js.map": "/static/js/main.a18ad604.js.map",
     "488.a989bcbd.chunk.js.map": "/static/js/488.a989bcbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.851cc7ef.css",
+    "static/css/main.33eb999d.css",
     "static/js/main.a18ad604.js"
   ]
 }
