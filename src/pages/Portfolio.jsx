@@ -8,7 +8,7 @@ function Portfolio({ reference }) {
   const [data, setData] = useState([]);
 
   const fetchData = () => {
-    fetch("http://localhost:3000/api/portfolioData.json")
+    fetch("/api/portfolioData.json")
       .then((res) => res.json())
       .then((data) => {
         setPortfolio(data);
