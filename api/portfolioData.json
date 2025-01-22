@@ -1,0 +1,42 @@
+[
+  {
+    "_id": 1,
+    "img": "/assets/portfolio/project-one/main.png",
+    "title": "Awochem Automated Operations and E-commerce System",
+    "brief": "Developed a comprehensive system for Awochem that automates operations, streamlines order management, optimizes inventory, and integrates secure online payments. The system also includes a real-time chat and intelligent chatbot for enhanced customer communication.",
+    "description": "This project involved designing and developing a robust platform for Awochem to automate its core operations, including customer order management, inventory control, and production oversight. Key features included a user-friendly order placement interface, a real-time communication system with chatbot integration, and an optimized inventory management module. The platform also incorporated a secure online payment system to ensure smooth customer transactions. Built with scalability in mind, the system accommodates Awochem's potential growth, with the flexibility to handle evolving business needs.",
+    "tools": ["React", "Node.js", "MySQL", "Docker"],
+    "screenshots": ["/assets/portfolio/project-one/main.png","/assets/portfolio/project-one/screenshot1.png", "/assets/portfolio/project-one/screenshot2.png","/assets/portfolio/project-one/screenshot3.png", "/assets/portfolio/project-one/screenshot4.png", "/assets/portfolio/project-one/screenshot5.png", "/assets/portfolio/project-one/screenshot6.png", "/assets/portfolio/project-one/screenshot7.png", "/assets/portfolio/project-one/screenshot8.png", "/assets/portfolio/project-one/screenshot9.png", "/assets/portfolio/project-one/screenshot10.png"],
+    "link": ""
+  },
+  {
+    "_id": 2,
+    "img": "/assets/portfolio/project-two/main.png",
+    "title": "Design and Implementation of a Smart Speed Camera System for Pedestrian Safety",
+    "brief": "Developed a smart camera system integrating advanced video processing and computer vision technologies to enhance pedestrian safety",
+    "description": "This project aimed to address pedestrian safety concerns by designing and implementing a smart speed camera system. Leveraging advanced video processing and computer vision algorithms, the system ensures accurate and efficient speed detection for vehicles operating in pedestrian-heavy areas.",
+    "tools": ["Jupyter Notebook", "Computer Vision Libraries (e.g., OpenCV, TensorFlow)"],
+    "screenshots": ["/assets/portfolio/project-two/main.png", "/assets/portfolio/project-two/screenshot1.jpg", "/assets/portfolio/project-two/screenshot2.png", "/assets/portfolio/project-two/screenshot3.jpg", "/assets/portfolio/project-two/screenshot4.png"],
+    "link": ""
+  },
+  {
+    "_id": 3,
+    "img": "/assets/portfolio/project-three/main.png",
+    "title": "Design and Development of a Advanced Auction Catalogue System",
+    "brief": "Created a user-friendly, web-based auction and catalogue system, offering enhanced inventory management, advanced search functionality, and a responsive interface for seamless bidding and client engagement",
+    "description": "This project aimed to modernize and enhance auction processes by developing a comprehensive digital platform. The primary objectives were to digitize the existing auction catalogue, improve inventory management, and provide a seamless user experience for bidders and art enthusiasts. The system included several key features. Real-time updates ensured the auction catalogue was always current and accessible to a broader audience. Advanced search functionality allowed users to easily discover items with streamlined filtering options. The category range was expanded to include a wider variety of art types, catering to diverse collector interests. A responsive user interface was designed to work seamlessly across both mobile and desktop devices, enabling intuitive browsing and smooth bidding. Additionally, an efficient digital record-keeping system was implemented to securely maintain all auction-related data.",
+    "tools": ["PHP", "HTML", "CSS"],
+    "screenshots": ["/assets/portfolio/project-three/main.png", "/assets/portfolio/project-three/screenshot1.png", "/assets/portfolio/project-three/screenshot2.png", "/assets/portfolio/project-three/screenshot3.png", "/assets/portfolio/project-three/screenshot4.png", "/assets/portfolio/project-three/screenshot5.png"],
+    "link": ""
+  },
+  {
+    "_id": 4,
+    "img": "/assets/portfolio/project-four/main.png",
+    "title": "Shoe Mobile Shopping App",
+    "brief": "Developed a mobile application to provide users with a personalized and efficient shoe shopping experience. The app includes features for user registration, product browsing, and profile management.",
+    "description": "This is a mobile application designed to deliver a comprehensive shoe shopping experience. Built using Android Studio and Java, the app provides user-friendly features such as user registration, detailed product categories, and a dynamic profile management system. Users can explore a wide range of shoe categories, view detailed product descriptions with pricing, and update their profiles seamlessly. All updates are timestamped for better tracking, enhancing the user experience. The app ensures smooth navigation and an intuitive interface, catering to the needs of shoe enthusiasts.",
+    "tools": ["Android Studio", "Java", "XML"],
+    "screenshots": ["/assets/portfolio/project-four/main.png", "/assets/portfolio/project-four/screenshot1.png", "/assets/portfolio/project-four/screenshot2.png", "/assets/portfolio/project-four/screenshot3.png", "/assets/portfolio/project-four/screenshot4.png", "/assets/portfolio/project-four/screenshot5.png"],
+    "link": ""
+  }
+]
