@@ -1,10 +1,12 @@
 [
-    {
-      "_id": 1,
-      "img": "/assets/portfolio/portfolio-1.jpg",
-      "title": "test",
-      "brief": "test",
-      "category": "test"
-    }
-  ]
-  
+  {
+    "_id": 1,
+    "img": "/assets/portfolio/project-one/main.jpg",
+    "title": "test",
+    "brief": "test",
+    "description": "Detailed description of Project One.",
+    "tools": ["React", "Node.js", "CSS"],
+    "screenshots": ["/assets/portfolio/project-one/screenshot1.jpg", "/assets/portfolio/project-one/screenshot1.jpg"],
+    "link": "https://example.com/project-one"
+  }
+]

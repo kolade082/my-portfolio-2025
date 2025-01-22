@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 /*--------------------------------------------------------------
 # General
@@ -20,7 +20,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #040404;
   color: #fff;
   position: relative;
@@ -30,9 +30,9 @@ body {
 }
 
 body::before {
-  content: '';
+  content: "";
   position: fixed;
-  background: #040404 url('./images/main-bg.jpg') top center no-repeat;
+  background: #040404 url("./images/main-bg.jpg") top center no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -66,7 +66,7 @@ h4,
 h5,
 h6,
 p {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -120,7 +120,7 @@ section .container {
 }
 
 .section-title h2::after {
-  content: '';
+  content: "";
   width: 120px;
   height: 1px;
   display: inline-block;
