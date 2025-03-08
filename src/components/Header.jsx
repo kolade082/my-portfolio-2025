@@ -17,6 +17,10 @@ function Header({ sectionActive, reference, aboutActive }) {
   };
 
   const handleNavOnClick = (id, target) => {
+    // Close mobile menu when a nav item is clicked
+    setNavMobile(false);
+    setMenu(false);
+
     if (target === "header") {
       setHeader(false);
     } else {
@@ -52,7 +56,7 @@ function Header({ sectionActive, reference, aboutActive }) {
 
           <nav
             id="navbar"
-            className={`navbar ${navMobile ? "navbar-mobile" : null}`}
+            className={`navbar ${navMobile ? "navbar-mobile" : ""}`}
           >
             <ul>
               {navList.map((item) => (
@@ -63,18 +67,15 @@ function Header({ sectionActive, reference, aboutActive }) {
                 />
               ))}
             </ul>
-            {menu ? (
-              <i
-                className="bi bi-x mobile-nav-toggle"
-                onClick={handleNavMobile}
-              ></i>
-            ) : (
-              <i
-                className="bi bi-list mobile-nav-toggle"
-                onClick={handleNavMobile}
-              ></i>
-            )}
           </nav>
+
+          <button 
+            className="mobile-nav-toggle" 
+            onClick={handleNavMobile}
+            aria-label={menu ? "Close menu" : "Open menu"}
+          >
+            <i className={`bi bi-${menu ? "x" : "list"}`}></i>
+          </button>
         </div>
 
         <div className="hero-content">

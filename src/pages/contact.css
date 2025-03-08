@@ -25,6 +25,10 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 25px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 
@@ -181,3 +185,7 @@
   animation-delay: calc(var(--index) * 0.1s);
 }
   
+.contact-info-card-content {
+  display: inline-flexbox;
+  align-content: center;
+}

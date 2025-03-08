@@ -11,7 +11,7 @@ const certificationsData = [{
     _id: 2,
     title: "Angular and NgRx - Building Real Project From Scratch",
     issuedBy: "Udemy",
-    issuerImage: require("../images/udemy.png"),
+    issuerImage: require("../images/udemy-removebg.png"),
     date: "July 2024",
     credentialId: "UC-76278a3a-df37-42b3-85ec-3243442355e3",
     link: "https://www.udemy.com/certificate/UC-76278a3a-df37-42b3-85ec-3243442355e3/",

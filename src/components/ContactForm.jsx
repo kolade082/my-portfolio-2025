@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import "./contactForm.css";
 import Swal from "sweetalert2";
+import emailjs from '@emailjs/browser';
 
 function ContactForm() {
+  const form = useRef();
   const initialState = {
     fullname: "",
     email: "",
     subject: "",
     message: "",
   };
+
+  const emailConfig = useMemo(() => ({
+    serviceId: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+    templateId: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+    publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+  }), []); 
+
+  useEffect(() => {
+    emailjs.init(emailConfig.publicKey);
+    console.log('EmailJS Config:', emailConfig);
+  }, [emailConfig]);
 
   const [formData, setFormData] = useState(initialState);
   const [loading, setLoading] = useState(false);
@@ -33,7 +46,6 @@ function ContactForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: "" });
     }
@@ -51,35 +63,29 @@ function ContactForm() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://my-portfolio-2025-backend-c498a232e553.herokuapp.com/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const result = await emailjs.sendForm(
+        emailConfig.serviceId,
+        emailConfig.templateId,
+        form.current,
+        emailConfig.publicKey
+      );
+
+      console.log('Success:', result);
+      setFormData(initialState);
+      Swal.fire({
+        icon: "success",
+        title: "Message sent!",
+        text: "Thank you for your message. I'll get back to you soon!",
+        background: "#1f1f1f",
+        color: "#fff",
+        confirmButtonColor: "var(--primary)",
       });
-
-      const data = await response.json();
-
-      if (response.status === 200) {
-        setFormData(initialState);
-        Swal.fire({
-          icon: "success",
-          title: "Message sent!",
-          text: "Thank you for your message. I'll get back to you soon!",
-          background: "#1f1f1f",
-          color: "#fff",
-          confirmButtonColor: "var(--primary)",
-        });
-      } else {
-        throw new Error(data.message || "Failed to send message");
-      }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error details:", error);
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Something went wrong. Please try again later.",
+        text: error.message || "Something went wrong. Please try again later.",
         background: "#1f1f1f",
         color: "#fff",
         confirmButtonColor: "var(--primary)",
@@ -90,7 +96,7 @@ function ContactForm() {
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form ref={form} className="contact-form" onSubmit={handleSubmit}>
       <div className="form-group">
         <div className="input-group">
           <input

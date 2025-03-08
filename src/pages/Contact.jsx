@@ -11,12 +11,13 @@ function Contact({ reference }) {
         
         <div className="contact-content">
           <div className="contact-info">
-            <div className="contact-info-card location">
+            <div className="contact-info-card location"> 
               <div className="icon-wrapper">
                 <i className="bi bi-geo-alt"></i>
               </div>
               <h3>Location</h3>
               <p>London, United Kingdom</p>
+              
             </div>
 
             <div className="contact-info-card email">
