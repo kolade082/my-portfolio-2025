@@ -76,7 +76,7 @@ section {
   overflow: hidden;
   position: absolute;
   width: 100%;
-  top: 50vh;
+  /* top: 50vh; */
   bottom: 0;
   opacity: 0;
   visibility: hidden;
@@ -89,7 +89,7 @@ section.section-show {
   height: auto;
   opacity: 1;
   visibility: visible;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   overflow-y: visible;
 }
 
