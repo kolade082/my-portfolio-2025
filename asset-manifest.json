@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.33eb999d.css",
-    "main.js": "/static/js/main.a18ad604.js",
+    "main.css": "/static/css/main.bf81909b.css",
+    "main.js": "/static/js/main.df73b91e.js",
     "static/js/488.a989bcbd.chunk.js": "/static/js/488.a989bcbd.chunk.js",
     "static/media/profile-img.png": "/static/media/profile-img.9f74c17e5616928716c0.png",
     "static/media/remixicon.svg?t=1734404658139": "/static/media/remixicon.df9902a6df13645438e1.svg",
@@ -15,18 +15,20 @@
     "static/media/remixicon.woff?t=1734404658139": "/static/media/remixicon.ce82bb240fef24f93f95.woff",
     "static/media/remixicon.woff2?t=1734404658139": "/static/media/remixicon.bb211d855a1864aa5b67.woff2",
     "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/main-bg-portrait.png": "/static/media/main-bg-portrait.ce488da9c30b2623bead.png",
     "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
+    "static/media/udemy-removebg.png": "/static/media/udemy-removebg.1427d452ecde33fc5f51.png",
     "static/media/boxicons.woff2": "/static/media/boxicons.df635aaf04cd75132f62.woff2",
-    "static/media/udemy-logo.svg.png": "/static/media/udemy-logo.svg.cda09160f9483eaae771.png",
-    "static/media/free-code-camp-logo.svg.png": "/static/media/free-code-camp-logo.svg.cc98822c11b81a38c7fa.png",
+    "static/media/Kolade's Resume.pdf": "/static/media/Kolade's Resume.2301328bce91884947b6.pdf",
     "static/media/forage-logo.png": "/static/media/forage-logo.3f70c1a7e691aa549523.png",
+    "static/media/logo.svg": "/static/media/logo.3e46129e2638724ef3b415f57599f6be.svg",
     "index.html": "/index.html",
-    "main.33eb999d.css.map": "/static/css/main.33eb999d.css.map",
-    "main.a18ad604.js.map": "/static/js/main.a18ad604.js.map",
+    "main.bf81909b.css.map": "/static/css/main.bf81909b.css.map",
+    "main.df73b91e.js.map": "/static/js/main.df73b91e.js.map",
     "488.a989bcbd.chunk.js.map": "/static/js/488.a989bcbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.33eb999d.css",
-    "static/js/main.a18ad604.js"
+    "static/css/main.bf81909b.css",
+    "static/js/main.df73b91e.js"
   ]
 }
