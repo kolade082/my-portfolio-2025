@@ -100,12 +100,12 @@ section .container {
 }
 
 @media (max-width: 768px) {
-  section {
-    top: 120px;
+  /* section {
+    top: 100px;
   }
   section.section-show {
     top: 80px;
-  }
+  } */
 }
 .section-title h2 {
   font-size: 0.9rem;
