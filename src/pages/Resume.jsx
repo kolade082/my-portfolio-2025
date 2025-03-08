@@ -1,26 +1,42 @@
 import React from "react";
 import "./resume.css";
 import SectionTitle from "../components/SectionTitle";
+import resumePDF from "../Kolade's Resume.pdf";
 
 function Resume({ reference }) {
+  const handleDownloadResume = () => {
+    const resumeUrl = resumePDF;
+    window.open(resumeUrl, '_blank');
+  };
+
   return (
     <section id="resume" className="resume" ref={reference}>
       <div className="container">
-        <SectionTitle title="Resume" subtitle="Here's My Resume" />
+        <div className="resume-header">
+          <SectionTitle title="Resume" subtitle="My Professional Journey" />
+          <button className="download-resume" onClick={handleDownloadResume}>
+            <i className="bi bi-download"></i>
+            Download Resume
+          </button>
+        </div>
+
         <div className="row">
           <div className="col-lg-6">
-            {/* <h3 className="resume-title">Summary</h3> */}
             <div className="resume-item pb-0">
               <h4>Kolade Oluwadara</h4>
-              <p>
-                {/* <em>
-                  Loading ...
-                </em> */}
-              </p>
-              <ul>
-                <li>London, United Kingdom</li>
-                <li>(+44) 7572 887155</li>
-                <li>koladedara@outlook.com</li>
+              <ul className="contact-info">
+                <li>
+                  <i className="bi bi-geo-alt"></i>
+                  London, United Kingdom
+                </li>
+                <li>
+                  <i className="bi bi-phone"></i>
+                  (+44) 7572 887155
+                </li>
+                <li>
+                  <i className="bi bi-envelope"></i>
+                  koladedara@outlook.com
+                </li>
               </ul>
             </div>
 
@@ -52,6 +68,7 @@ function Resume({ reference }) {
               <p>Deeper Life High School</p>
             </div>
           </div>
+
           <div className="col-lg-6">
             <h3 className="resume-title">Professional Experience</h3>
             <div className="resume-item">
@@ -114,12 +131,8 @@ function Resume({ reference }) {
               <ul>
                 <li>
                   Led the development of a system to synchronize local patient
-                  records with the NHS's database. My role as a Full Stack
-                  Developer involved key tasks such as integrating with the NHS
-                  API to enable real-time data comparison. I focused on ensuring
-                  both accuracy and security in the record management process,
-                  handling various aspects of full-stack development from
-                  database handling to user interface design
+                  records with the NHS's database, focusing on ensuring both accuracy 
+                  and security in the record management process
                 </li>
                 <li>
                   Employed technologies like PHP, JavaScript, MySQL, HTML and
@@ -135,7 +148,7 @@ function Resume({ reference }) {
             </div>
 
             <div className="resume-item">
-              <h4>JPMorgan Chase Code for Good,</h4>
+              <h4>JPMorgan Chase Code for Good</h4>
               <h5>Oct, 2023</h5>
               <p>
                 <em>London, UK </em>
@@ -147,14 +160,14 @@ function Resume({ reference }) {
                 </li>
                 <li>
                   Utilized React, Flask, Firebase authentication, and Google
-                  APls to create a comprehensive platform facilitating efficient
+                  APIs to create a comprehensive platform facilitating efficient
                   wish management for children and volunteers
                 </li>
               </ul>
             </div>
 
             <div className="resume-item">
-              <h4>GOOGLE</h4>
+              <h4>Google Solution Challenge</h4>
               <h5>Oct, 2023</h5>
               <p>
                 <em>London, UK </em>
@@ -162,18 +175,14 @@ function Resume({ reference }) {
               <ul>
                 <li>
                   Designed and developed a user-friendly web application
-                  tailored for students, offering a seamless experience for
-                  event management
+                  for students, offering seamless event management
                 </li>
                 <li>
-                  The application empowers users to effortlessly book events,
-                  create their own events, add them to their personal calendars,
-                  and conveniently locate the nearest events on an interactive
-                  map, all seamlessly integrated through the Google Maps API
+                  Created features for booking events, event creation, calendar
+                  integration, and interactive map location using Google Maps API
                 </li>
                 <li>
-                  Integrated technologies: React, Node.js, SQL, and utilized
-                  Google Maps API for interactive map functionalities
+                  Integrated technologies: React, Node.js, SQL, and Google Maps API
                 </li>
               </ul>
             </div>
@@ -187,8 +196,7 @@ function Resume({ reference }) {
               <ul>
                 <li>
                   Implemented a workflow system using agile methodologies that
-                  enhanced internal communication and responsiveness across the
-                  company
+                  enhanced internal communication and responsiveness
                 </li>
                 <li>
                   Employed technologies like Laravel framework, PHP, MySQL,

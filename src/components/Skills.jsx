@@ -2,22 +2,45 @@ import React, { useState } from 'react';
 import skillsData from '../data/skillsData';
 import './skills.css';
 import SkillItem from './SkillItem';
+import SectionTitle from './SectionTitle';
 
-function Skill() {
-  const [skills, setSkills] = useState(skillsData);
+function Skills() {
+  const [skills] = useState(skillsData);
+
+  // Group skills by category
+  const categories = {
+    'Languages': skills.filter(skill => 
+      ['JavaScript', 'TypeScript', 'Python', 'Java', 'PHP', 'HTML', 'CSS'].includes(skill.name)
+    ),
+    'Frameworks & Libraries': skills.filter(skill => 
+      ['React', 'Angular', 'Node.js'].includes(skill.name)
+    ),
+    'Databases & Tools': skills.filter(skill => 
+      ['MySQL', 'Docker', 'Git', 'GitHub'].includes(skill.name)
+    ),
+    'Development Tools': skills.filter(skill => 
+      ['VS Code', 'IntelliJ IDEA', 'Android Studio'].includes(skill.name)
+    )
+  };
 
   return (
     <div className="skills container">
-      <div className="section-title">
-        <h2>Skills</h2>
-      </div>
-      <div className="row">
-        {skills.map(skill => (
-          <SkillItem key={skill._id} skill={skill} />
+      <SectionTitle title="Skills" subtitle="My Technical Skills" />
+      
+      <div className="skills-content">
+        {Object.entries(categories).map(([category, categorySkills]) => (
+          <div key={category} className="skill-category">
+            <h3 className="category-title">{category}</h3>
+            <div className="skills-grid">
+              {categorySkills.map(skill => (
+                <SkillItem key={skill._id} skill={skill} />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>
   );
 }
 
-export default Skill;
+export default Skills;

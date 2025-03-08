@@ -1,65 +1,139 @@
 .certifications .certification-item {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 200px;
-  }
-  
-  .certifications .certification-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .certifications .certification-item h3 {
-    font-size: 1.1em;
-    font-weight: bolder;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .certifications .certification-item p {
-    font-size: 0.8em;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .certifications .certification-item a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .certifications .certification-item a:hover {
-    color: #0056b3;
-  }
-  
-  .certifications .issuer-info {
-    display: flex;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: auto;
+  min-height: 180px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.certifications .certification-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.certifications .certification-item h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.certifications .certification-item:hover h3 {
+  color: var(--primary);
+}
+
+.certifications .certification-item p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.certifications .certification-item a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+.certifications .certification-item a:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.certifications .certification-item a::after {
+  content: '→';
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.certifications .certification-item a:hover::after {
+  transform: translateX(3px);
+}
+
+.certifications .issuer-info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.certifications .issuer-info-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certifications .issuer-logo {
+  height: 45px;
+  width: auto;
+  filter: grayscale(100%) brightness(200%);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.certifications .certification-item:hover .issuer-logo {
+  filter: grayscale(0%) brightness(100%);
+  opacity: 1;
+}
+
+.certifications .issuer-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.certifications .issuer-info strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  min-width: 100px;
+}
+
+@media (max-width: 768px) {
+  .certifications .certification-item {
     flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    min-height: auto;
   }
-  
-  .certifications .issuer-logo {
-    /* width: 50px; */
-    height: 40px;
-    /* object-fit: cover; */
-    margin-left: 20px; 
+
+  .certifications .issuer-info {
+    padding-right: 0;
+    margin-bottom: 20px;
   }
-  
+
+  .certifications .issuer-info-right {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+  }
+
   .certifications .issuer-info p {
-    font-size: 1.1em;
-    margin: 0;
-    color: #333;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
   }
-  
+
   .certifications .issuer-info strong {
-    font-weight: bold;
+    min-width: auto;
   }
+}

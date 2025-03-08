@@ -1,5 +1,4 @@
-const certificationsData = [
-  {
+const certificationsData = [{
     _id: 1,
     title: "J.P. Morgan - Software Engineering Job Simulation",
     issuedBy: "The Forage",
@@ -12,7 +11,7 @@ const certificationsData = [
     _id: 2,
     title: "Angular and NgRx - Building Real Project From Scratch",
     issuedBy: "Udemy",
-    issuerImage: require("../images/udemy-logo.svg.png"),
+    issuerImage: require("../images/udemy.png"),
     date: "July 2024",
     credentialId: "UC-76278a3a-df37-42b3-85ec-3243442355e3",
     link: "https://www.udemy.com/certificate/UC-76278a3a-df37-42b3-85ec-3243442355e3/",
@@ -21,7 +20,7 @@ const certificationsData = [
     _id: 3,
     title: "Responsive Web Design",
     issuedBy: "FreeCodeCamp",
-    issuerImage: require("../images/free-code-camp-logo.svg.png"),
+    issuerImage: require("../images/fcc.png"),
     date: "Oct 2024",
     credentialId: "darkay-rwd",
     link: "https://freecodecamp.org/certification/darkay/responsive-web-design",

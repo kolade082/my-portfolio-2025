@@ -3,6 +3,7 @@ import "./header.css";
 import navListData from "../data/navListData";
 import NavListItem from "./NavListItem";
 import SocialLinksItem from "./SocialLinksItem";
+import logo from "../images/logo.svg";
 
 function Header({ sectionActive, reference, aboutActive }) {
   const [navList, setNavList] = useState(navListData);
@@ -44,50 +45,60 @@ function Header({ sectionActive, reference, aboutActive }) {
       className={header ? "header-top" : null}
     >
       <div className="container">
-        <h1>
-          <a href="/">Kolade Oluwadara</a>
-        </h1>
-        <h2>
-          Heyyyyyy! 👋 This is my <span>personal</span> website. Make sure to surf around!
-        </h2>
+        <div className="header-content">
+          <div className="logo-container">
+            <img src={logo} alt="Logo" className="logo" />
+          </div>
 
-        <nav
-          id="navbar"
-          className={`navbar ${navMobile ? "navbar-mobile" : null}`}
-        >
-          <ul>
-            {navList.map((item) => (
-              <NavListItem
-                key={item._id}
-                item={item}
-                navOnClick={handleNavOnClick}
+          <nav
+            id="navbar"
+            className={`navbar ${navMobile ? "navbar-mobile" : null}`}
+          >
+            <ul>
+              {navList.map((item) => (
+                <NavListItem
+                  key={item._id}
+                  item={item}
+                  navOnClick={handleNavOnClick}
+                />
+              ))}
+            </ul>
+            {menu ? (
+              <i
+                className="bi bi-x mobile-nav-toggle"
+                onClick={handleNavMobile}
+              ></i>
+            ) : (
+              <i
+                className="bi bi-list mobile-nav-toggle"
+                onClick={handleNavMobile}
+              ></i>
+            )}
+          </nav>
+        </div>
+
+        <div className="hero-content">
+          <div className="hero-wrapper">
+            <div className="text-top">
+              <span className="wave">👋</span> my name is Kolade Oluwadara and I'm a
+            </div>
+            <div className="text-role">
+              <div className="role-title">Software</div>
+              <div className="role-subtitle">Engineer</div>
+            </div>
+            <div className="social-links">
+              <SocialLinksItem name="github" url="https://github.com/kolade082" />
+              <SocialLinksItem
+                name="instagram"
+                url="https://www.instagram.com/kolade_oo/"
               />
-            ))}
-          </ul>
-          {menu ? (
-            <i
-              className="bi bi-x mobile-nav-toggle"
-              onClick={handleNavMobile}
-            ></i>
-          ) : (
-            <i
-              className="bi bi-list mobile-nav-toggle"
-              onClick={handleNavMobile}
-            ></i>
-          )}
-        </nav>
-
-        <div className="social-links">
-          <SocialLinksItem name="github" url="https://github.com/kolade082" />
-          <SocialLinksItem
-            name="instagram"
-            url="https://www.instagram.com/kolade_oo/"
-          />
-          <SocialLinksItem
-            name="linkedin"
-            url="https://www.linkedin.com/in/kolade-oluwadara-87563a245/"
-          />
-          <SocialLinksItem name="envelope" url="koladedara@outlook.com" />
+              <SocialLinksItem
+                name="linkedin"
+                url="https://www.linkedin.com/in/kolade-oluwadara-87563a245/"
+              />
+              <SocialLinksItem name="envelope" url="koladedara@outlook.com" />
+            </div>
+          </div>
         </div>
       </div>
     </header>
