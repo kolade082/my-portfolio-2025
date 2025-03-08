@@ -81,7 +81,7 @@ function Header({ sectionActive, reference, aboutActive }) {
         <div className="hero-content">
           <div className="hero-wrapper">
             <div className="text-top">
-              <span className="wave">👋</span> my name is Kolade Oluwadara and I'm a
+              <span className="wave">👋 </span> Hi, my name is Kolade Oluwadara and I'm a
             </div>
             <div className="text-role">
               <div className="role-title">Software</div>
