@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.51b1c440.css",
+    "main.css": "/static/css/main.6c6b3968.css",
     "main.js": "/static/js/main.884766e2.js",
     "static/js/488.a989bcbd.chunk.js": "/static/js/488.a989bcbd.chunk.js",
     "static/media/profile-img.png": "/static/media/profile-img.9f74c17e5616928716c0.png",
@@ -23,12 +23,12 @@
     "static/media/forage-logo.png": "/static/media/forage-logo.3f70c1a7e691aa549523.png",
     "static/media/logo.svg": "/static/media/logo.3e46129e2638724ef3b415f57599f6be.svg",
     "index.html": "/index.html",
-    "main.51b1c440.css.map": "/static/css/main.51b1c440.css.map",
+    "main.6c6b3968.css.map": "/static/css/main.6c6b3968.css.map",
     "main.884766e2.js.map": "/static/js/main.884766e2.js.map",
     "488.a989bcbd.chunk.js.map": "/static/js/488.a989bcbd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.51b1c440.css",
+    "static/css/main.6c6b3968.css",
     "static/js/main.884766e2.js"
   ]
 }
