@@ -7,52 +7,61 @@ function Contact({ reference }) {
   return (
     <section id="contact" className="contact" ref={reference}>
       <div className="container">
-        <SectionTitle title="Contact" subtitle="Contact Me" />
-        <div className="row mt-2">
-          
-        <div className="col-md-6 d-flex align-items-stretch">
-            <div className="info-box">
-              <i className="bx bx-map"></i>
+        <SectionTitle title="Contact" subtitle="Let's Connect" />
+        
+        <div className="contact-content">
+          <div className="contact-info">
+            <div className="contact-info-card location">
+              <div className="icon-wrapper">
+                <i className="bi bi-geo-alt"></i>
+              </div>
               <h3>Location</h3>
-              <p>United Kingdom</p>
+              <p>London, United Kingdom</p>
             </div>
-          </div>
-          <div className="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-            <div className="info-box">
-              <i className="bx bx-share-alt"></i>
+
+            <div className="contact-info-card email">
+              <div className="icon-wrapper">
+                <i className="bi bi-envelope"></i>
+              </div>
+              <h3>Email</h3>
+              <a href="mailto:koladedara@outlook.com">koladedara@outlook.com</a>
+            </div>
+
+            <div className="contact-info-card phone">
+              <div className="icon-wrapper">
+                <i className="bi bi-phone"></i>
+              </div>
+              <h3>Phone</h3>
+              <a href="tel:+447572887155">+44 7572 887155</a>
+            </div>
+
+            <div className="contact-info-card social">
+              <div className="icon-wrapper">
+                <i className="bi bi-share"></i>
+              </div>
               <h3>Social Profiles</h3>
               <div className="social-links">
-                <a href="https://github.com/kolade082" className="github">
+                <a href="https://github.com/kolade082" target="_blank" rel="noopener noreferrer" className="github">
                   <i className="bi bi-github"></i>
                 </a>
-                <a href="https://www.instagram.com/kolade_oo/" className="instagram">
+                <a href="https://www.instagram.com/kolade_oo/" target="_blank" rel="noopener noreferrer" className="instagram">
                   <i className="bi bi-instagram"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/kolade-oluwadara-87563a245/" className="linkedin">
+                <a href="https://www.linkedin.com/in/kolade-oluwadara-87563a245/" target="_blank" rel="noopener noreferrer" className="linkedin">
                   <i className="bi bi-linkedin"></i>
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="col-md-6 mt-4 d-flex align-items-stretch">
-            <div className="info-box">
-              <i className="bx bx-envelope"></i>
-              <h3>Email Me</h3>
-              <p>koladedara@outlook.com</p>
+          <div className="contact-form-wrapper">
+            <div className="form-header">
+              <h3>Send Me a Message</h3>
+              <p>Have a question or want to work together? Drop me a line!</p>
             </div>
-          </div>
-          <div className="col-md-6 mt-4 d-flex align-items-stretch">
-            <div className="info-box">
-              <i className="bx bx-phone-call"></i>
-              <h3>Call Me</h3>
-              <p>+44 7572 887155</p>
-            </div>
+            <ContactForm />
           </div>
         </div>
-
-        
-        <ContactForm />
       </div>
     </section>
   );

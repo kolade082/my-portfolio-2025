@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./contactForm.css";
 import Swal from "sweetalert2";
-import emailjs from "@emailjs/browser";
 
 function ContactForm() {
   const initialState = {
@@ -9,28 +8,47 @@ function ContactForm() {
     email: "",
     subject: "",
     message: "",
-    result: "",
   };
 
-  const [text, setText] = useState(initialState);
+  const [formData, setFormData] = useState(initialState);
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
 
-  const changeText = (e) => {
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.fullname.trim()) {
+      newErrors.fullname = "Name is required";
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+    return newErrors;
+  };
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setText({ ...text, [name]: value, result: "" });
+    setFormData({ ...formData, [name]: value });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: "" });
+    }
   };
 
-  const handleSubmitMessage = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (text.fullname === "" || text.email === "" || text.message === "") {
-      setText({ ...text, result: "incomplete" });
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Please fill in all the details.",
-      });
+    
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
       return;
     }
+
+    setLoading(true);
 
     try {
       const response = await fetch("https://my-portfolio-2025-backend-c498a232e553.herokuapp.com/send-email", {
@@ -38,93 +56,102 @@ function ContactForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          fullname: text.fullname,
-          email: text.email,
-          subject: text.subject,
-          message: text.message,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
 
       if (response.status === 200) {
-        setText(initialState); 
+        setFormData(initialState);
         Swal.fire({
           icon: "success",
           title: "Message sent!",
-          text: "Your message was sent successfully.",
+          text: "Thank you for your message. I'll get back to you soon!",
+          background: "#1f1f1f",
+          color: "#fff",
+          confirmButtonColor: "var(--primary)",
         });
       } else {
-        Swal.fire({
-          icon: "error",
-          title: "Failed!",
-          text: "Failed to send the message. Please try again later.",
-        });
+        throw new Error(data.message || "Failed to send message");
       }
     } catch (error) {
       console.error("Error:", error);
       Swal.fire({
         icon: "error",
-        title: "Error",
-        text: "Failed to send the message. Please try again later.",
+        title: "Oops...",
+        text: "Something went wrong. Please try again later.",
+        background: "#1f1f1f",
+        color: "#fff",
+        confirmButtonColor: "var(--primary)",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <form className="contact-form mt-4" onSubmit={handleSubmitMessage}>
-      <div className="row">
-        <div className="col-md-6 form-group">
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <div className="input-group">
           <input
             type="text"
             name="fullname"
-            value={text.fullname}
-            onChange={changeText}
-            className="form-control"
-            id="name"
+            value={formData.fullname}
+            onChange={handleChange}
             placeholder="Your Name"
+            className={errors.fullname ? "error" : ""}
           />
+          {errors.fullname && <span className="error-message">{errors.fullname}</span>}
         </div>
-        <div className="col-md-6 form-group mt-3 mt-md-0">
+
+        <div className="input-group">
           <input
             type="email"
-            className="form-control"
             name="email"
-            value={text.email}
-            onChange={changeText}
-            id="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder="Your Email"
+            className={errors.email ? "error" : ""}
           />
+          {errors.email && <span className="error-message">{errors.email}</span>}
         </div>
       </div>
-      <div className="form-group mt-3">
+
+      <div className="input-group">
         <input
           type="text"
-          className="form-control"
           name="subject"
-          value={text.subject}
-          onChange={changeText}
-          id="subject"
-          placeholder="Subject"
+          value={formData.subject}
+          onChange={handleChange}
+          placeholder="Subject (Optional)"
         />
       </div>
-      <div className="form-group mt-3">
+
+      <div className="input-group">
         <textarea
-          className="form-control"
           name="message"
-          value={text.message}
-          onChange={changeText}
+          value={formData.message}
+          onChange={handleChange}
           rows="6"
-          placeholder="Message"
+          placeholder="Your Message"
+          className={errors.message ? "error" : ""}
         ></textarea>
+        {errors.message && <span className="error-message">{errors.message}</span>}
       </div>
-      {/* {text.result === "incomplete" && (
-        <div className="error-message">Please fill in all above details</div>
-      )} */}
-      <div className="text-center">
-        <button type="submit">Send Message</button>
-      </div>
+
+      <button type="submit" className={loading ? "loading" : ""} disabled={loading}>
+        {loading ? (
+          <>
+            <span className="spinner"></span>
+            Sending...
+          </>
+        ) : (
+          <>
+            <i className="bi bi-send"></i>
+            Send Message
+          </>
+        )}
+      </button>
     </form>
   );
 }
