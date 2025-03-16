@@ -1,0 +1,16 @@
+*.css linguist-detectable=false
+*.scss linguist-detectable=false
+*.sass linguist-detectable=false
+*.less linguist-detectable=false
+
+# Mark JavaScript files as detectable
+*.js linguist-detectable=true
+*.jsx linguist-detectable=true
+*.ts linguist-detectable=true
+*.tsx linguist-detectable=true
+
+# Explicitly mark JavaScript files as JavaScript
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.ts linguist-language=JavaScript
+*.tsx linguist-language=JavaScript 
