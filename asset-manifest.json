@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.caf41257.css",
-    "main.js": "/static/js/main.b41122a1.js",
-    "static/js/488.a989bcbd.chunk.js": "/static/js/488.a989bcbd.chunk.js",
+    "main.css": "/static/css/main.25f57d1a.css",
+    "main.js": "/static/js/main.03483e3c.js",
+    "static/js/488.0bfd22d8.chunk.js": "/static/js/488.0bfd22d8.chunk.js",
     "static/media/profile-img.png": "/static/media/profile-img.9f74c17e5616928716c0.png",
     "static/media/remixicon.svg?t=1734404658139": "/static/media/remixicon.df9902a6df13645438e1.svg",
     "static/media/boxicons.svg": "/static/media/boxicons.9e2b21b135bc7d4c803f.svg",
@@ -13,22 +13,22 @@
     "static/media/boxicons.woff": "/static/media/boxicons.d12afc36557395143e4b.woff",
     "static/media/boxicons.ttf": "/static/media/boxicons.db9ddb1898dbd76badca.ttf",
     "static/media/remixicon.woff?t=1734404658139": "/static/media/remixicon.ce82bb240fef24f93f95.woff",
+    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.1295669cd4e305c97f2c.woff",
     "static/media/remixicon.woff2?t=1734404658139": "/static/media/remixicon.bb211d855a1864aa5b67.woff2",
-    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
+    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.92ea18a81d737146ff04.woff2",
     "static/media/main-bg-portrait.png": "/static/media/main-bg-portrait.ce488da9c30b2623bead.png",
-    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "static/media/udemy-removebg.png": "/static/media/udemy-removebg.1427d452ecde33fc5f51.png",
     "static/media/boxicons.woff2": "/static/media/boxicons.df635aaf04cd75132f62.woff2",
     "static/media/Kolade's Resume.pdf": "/static/media/Kolade's Resume.2301328bce91884947b6.pdf",
     "static/media/forage-logo.png": "/static/media/forage-logo.3f70c1a7e691aa549523.png",
     "static/media/logo.svg": "/static/media/logo.3e46129e2638724ef3b415f57599f6be.svg",
     "index.html": "/index.html",
-    "main.caf41257.css.map": "/static/css/main.caf41257.css.map",
-    "main.b41122a1.js.map": "/static/js/main.b41122a1.js.map",
-    "488.a989bcbd.chunk.js.map": "/static/js/488.a989bcbd.chunk.js.map"
+    "main.25f57d1a.css.map": "/static/css/main.25f57d1a.css.map",
+    "main.03483e3c.js.map": "/static/js/main.03483e3c.js.map",
+    "488.0bfd22d8.chunk.js.map": "/static/js/488.0bfd22d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.caf41257.css",
-    "static/js/main.b41122a1.js"
+    "static/css/main.25f57d1a.css",
+    "static/js/main.03483e3c.js"
   ]
 }
