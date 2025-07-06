@@ -19,8 +19,7 @@ function ContactForm() {
   }), []); 
 
   useEffect(() => {
-    emailjs.init(emailConfig.publicKey);
-    console.log('EmailJS Config:', emailConfig);
+    emailjs.init(emailConfig.publicKey);  
   }, [emailConfig]);
 
   const [formData, setFormData] = useState(initialState);
@@ -70,7 +69,6 @@ function ContactForm() {
         emailConfig.publicKey
       );
 
-      console.log('Success:', result);
       setFormData(initialState);
       Swal.fire({
         icon: "success",
@@ -81,7 +79,6 @@ function ContactForm() {
         confirmButtonColor: "var(--primary)",
       });
     } catch (error) {
-      console.error("Error details:", error);
       Swal.fire({
         icon: "error",
         title: "Oops...",

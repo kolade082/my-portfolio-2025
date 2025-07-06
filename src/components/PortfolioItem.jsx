@@ -5,7 +5,7 @@ function PortfolioItem({ item }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+    <div className={`col-lg-4 col-md-6 portfolio-item filter-${item.type || 'app'}`}>
       <div className="portfolio-wrap">
         <img src={item.img} className="img-fluid" alt={item.title} />
         <div className="portfolio-info">
@@ -21,9 +21,11 @@ function PortfolioItem({ item }) {
             >
               <i className="bi bi-eye"></i>
             </button>
-            {/* <a href={item.link} target="_blank" rel="noopener noreferrer">
-              <i className="bx bx-link"></i>
-            </a> */}
+            {item.link && (
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <i className="bx bx-link"></i>
+              </a>
+            )}
           </div>
         </div>
       </div>

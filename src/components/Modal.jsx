@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
 import "./modal.css";
 
 function Modal({ isOpen, onClose, item }) {
@@ -8,13 +9,37 @@ function Modal({ isOpen, onClose, item }) {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.classList.add('modal-open');
     } else {
       document.body.style.overflow = 'unset';
+      document.body.classList.remove('modal-open');
     }
     return () => {
       document.body.style.overflow = 'unset';
+      document.body.classList.remove('modal-open');
     };
   }, [isOpen]);
+
+  // Close modal when navigation occurs
+  useEffect(() => {
+    const handleNavigation = () => {
+      if (isOpen) {
+        onClose();
+      }
+    };
+
+    // Listen for clicks on navigation items
+    const navItems = document.querySelectorAll('#navbar a, .mobile-nav-toggle');
+    navItems.forEach(item => {
+      item.addEventListener('click', handleNavigation);
+    });
+
+    return () => {
+      navItems.forEach(item => {
+        item.removeEventListener('click', handleNavigation);
+      });
+    };
+  }, [isOpen, onClose]);
 
   const handleImageClick = (index) => {
     setSelectedImage(item.screenshots[index]);
@@ -66,90 +91,93 @@ function Modal({ isOpen, onClose, item }) {
 
   if (!isOpen) return null;
 
-  return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={e => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>
-          <i className="bi bi-x"></i>
-        </button>
-        
-        <div className="modal-header">
-          <h2>{item.title}</h2>
-          <div className="modal-links">
-            {item.demoUrl && (
-              <a href={item.demoUrl} target="_blank" rel="noopener noreferrer" className="modal-link">
-                <i className="bi bi-link-45deg"></i>
-                Live Demo
-              </a>
-            )}
-            {item.githubUrl && (
-              <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" className="modal-link">
-                <i className="bi bi-github"></i>
-                Source Code
-              </a>
-            )}
-          </div>
-        </div>
-
-        <div className="modal-body">
-          <div className="modal-description">
-            <p>{item.description}</p>
-          </div>
-
-          <div className="modal-tools">
-            <h4>Technologies Used</h4>
-            <ul className="tools-list">
-              {item.tools.map((tool, index) => (
-                <li key={index}>{tool}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="modal-gallery">
-            <h4>Project Screenshots</h4>
-            <div className="screenshots">
-              {item.screenshots.map((screenshot, index) => (
-                <div 
-                  key={index} 
-                  className="screenshot-wrapper"
-                  onClick={() => handleImageClick(index)}
-                >
-                  <img
-                    src={screenshot}
-                    alt={`${item.title} screenshot ${index + 1}`}
-                    className="screenshot-img"
-                    loading="lazy"
-                  />
-                  <div className="screenshot-overlay">
-                    <i className="bi bi-zoom-in"></i>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {selectedImage && (
-        <div className="image-viewer-overlay" onClick={closeImageViewer}>
-          <button className="viewer-close" onClick={closeImageViewer}>
+  return createPortal(
+    (
+      <div className="modal-overlay" onClick={onClose}>
+        <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <button className="modal-close" onClick={onClose}>
             <i className="bi bi-x"></i>
           </button>
-          <button className="viewer-nav prev" onClick={handlePrevImage}>
-            <i className="bi bi-chevron-left"></i>
-          </button>
-          <button className="viewer-nav next" onClick={handleNextImage}>
-            <i className="bi bi-chevron-right"></i>
-          </button>
-          <div className="viewer-content" onClick={e => e.stopPropagation()}>
-            <img src={selectedImage} alt="Full size view" />
-            <div className="viewer-counter">
-              {currentImageIndex + 1} / {item.screenshots.length}
+          
+          <div className="modal-header">
+            <h2>{item.title}</h2>
+            <div className="modal-links">
+              {item.demoUrl && (
+                <a href={item.demoUrl} target="_blank" rel="noopener noreferrer" className="modal-link">
+                  <i className="bi bi-link-45deg"></i>
+                  Live Demo
+                </a>
+              )}
+              {item.githubUrl && (
+                <a href={item.githubUrl} target="_blank" rel="noopener noreferrer" className="modal-link">
+                  <i className="bi bi-github"></i>
+                  Source Code
+                </a>
+              )}
+            </div>
+          </div>
+
+          <div className="modal-body">
+            <div className="modal-description">
+              <p>{item.description}</p>
+            </div>
+
+            <div className="modal-tools">
+              <h4>Technologies Used</h4>
+              <ul className="tools-list">
+                {item.tools.map((tool, index) => (
+                  <li key={index}>{tool}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="modal-gallery">
+              <h4>Project Screenshots</h4>
+              <div className="screenshots">
+                {item.screenshots.map((screenshot, index) => (
+                  <div 
+                    key={index} 
+                    className="screenshot-wrapper"
+                    onClick={() => handleImageClick(index)}
+                  >
+                    <img
+                      src={screenshot}
+                      alt={`${item.title} screenshot ${index + 1}`}
+                      className="screenshot-img"
+                      loading="lazy"
+                    />
+                    <div className="screenshot-overlay">
+                      <i className="bi bi-zoom-in"></i>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      )}
-    </div>
+
+        {selectedImage && (
+          <div className="image-viewer-overlay" onClick={closeImageViewer}>
+            <button className="viewer-close" onClick={closeImageViewer}>
+              <i className="bi bi-x"></i>
+            </button>
+            <button className="viewer-nav prev" onClick={handlePrevImage}>
+              <i className="bi bi-chevron-left"></i>
+            </button>
+            <button className="viewer-nav next" onClick={handleNextImage}>
+              <i className="bi bi-chevron-right"></i>
+            </button>
+            <div className="viewer-content" onClick={e => e.stopPropagation()}>
+              <img src={selectedImage} alt="Full size view" />
+              <div className="viewer-counter">
+                {currentImageIndex + 1} / {item.screenshots.length}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    ),
+    document.body
   );
 }
 

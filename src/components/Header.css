@@ -4,7 +4,7 @@
     height: 100vh;
     display: flex;
     align-items: center;
-    z-index: 997;
+    z-index: 999999;
     overflow: hidden;
     background: url('../images/main-bg.jpg') center/cover no-repeat fixed;
 }
@@ -198,6 +198,7 @@
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 999999;
     right: 0;
     background: #040404;
 }
