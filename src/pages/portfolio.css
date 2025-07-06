@@ -309,6 +309,21 @@
   display: block;
 }
 
+/* Portfolio group headings */
+.portfolio-group-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary, #ff9800);
+  margin-bottom: 1.2rem;
+  margin-top: 2.5rem;
+  letter-spacing: 0.5px;
+  border-left: 4px solid var(--primary, #ff9800);
+  padding-left: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  display: inline-block;
+  border-radius: 0 4px 4px 0;
+}
+
 /* Modal spacing tweaks */
 .modal-content {
   padding: 16px;
