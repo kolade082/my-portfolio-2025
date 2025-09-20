@@ -72,6 +72,14 @@ function Resume({ reference }) {
           <div className="col-lg-6">
             <h3 className="resume-title">Professional Experience</h3>
             <div className="resume-item">
+              <h4>Software Engineer</h4>
+              <h5>Sep, 2025 - Present</h5>
+              <p>
+                <em>J.P. Morgan Private Bank</em>
+              </p>
+              
+            </div>
+            <div className="resume-item">
               <h4>Software Engineer Intern</h4>
               <h5>June, 2024 - Aug, 2024</h5>
               <p>
