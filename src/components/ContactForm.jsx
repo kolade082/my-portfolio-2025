@@ -62,7 +62,7 @@ function ContactForm() {
     setLoading(true);
 
     try {
-      const result = await emailjs.sendForm(
+      await emailjs.sendForm(
         emailConfig.serviceId,
         emailConfig.templateId,
         form.current,
