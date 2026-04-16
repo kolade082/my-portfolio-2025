@@ -9,7 +9,7 @@ function Portfolio({ reference }) {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const fetchData = () => {
-    fetch("/api/portfolioData.json")
+    fetch(`${process.env.PUBLIC_URL}/api/portfolioData.json`)
       .then((res) => res.json())
       .then((data) => {
         setPortfolio(data);
