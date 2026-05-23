@@ -1,106 +1,42 @@
-import React, { useState } from "react";
-import "./header.css";
-import navListData from "../data/navListData";
-import NavListItem from "./NavListItem";
-import SocialLinksItem from "./SocialLinksItem";
-import logo from "../images/logo.svg";
+import React from 'react';
+import './Header.css';
+import profileImg from '../images/profile-img.png';
 
-function Header({ sectionActive, reference, aboutActive }) {
-  const [navList, setNavList] = useState(navListData);
-  const [navMobile, setNavMobile] = useState(false);
-  const [menu, setMenu] = useState(false);
-  const [header, setHeader] = useState(false);
-
-  const handleNavMobile = () => {
-    setNavMobile(!navMobile);
-    setMenu(!menu);
-  };
-
-  const handleNavOnClick = (id, target) => {
-    // Close mobile menu when a nav item is clicked
-    setNavMobile(false);
-    setMenu(false);
-
-    if (target === "header") {
-      setHeader(false);
-    } else {
-      setHeader(true);
-    }
-
-    if (target === "about") {
-      aboutActive(true);
-    } else {
-      aboutActive(false);
-    }
-
-    const newNavList = navList.map((nav) => {
-      nav.active = false;
-      if (nav._id === id) nav.active = true;
-      return nav;
-    });
-    setNavList(newNavList);
-    sectionActive(target);
-  };
-
+function Header() {
   return (
-    <header
-      id="header"
-      ref={reference}
-      className={header ? "header-top" : null}
-    >
-      <div className="container">
-        <div className="header-content">
-          <div className="logo-container">
-            <img src={logo} alt="Logo" className="logo" />
+    <header id="header" className="hero">
+      <div className="hero-content">
+        <div className="hero-intro">
+          <span className="hero-greeting">Hi, I'm Kolade</span>
+          <h1 className="hero-title">Software Engineer & Creative Developer</h1>
+          <div className="hero-cta">
+            <a href="#portfolio" className="btn btn-primary">View My Work</a>
+            <a href="#contact" className="btn btn-secondary">Get in Touch</a>
           </div>
-
-          <nav
-            id="navbar"
-            className={`navbar ${navMobile ? "navbar-mobile" : ""}`}
-          >
-            <ul>
-              {navList.map((item) => (
-                <NavListItem
-                  key={item._id}
-                  item={item}
-                  navOnClick={handleNavOnClick}
-                />
-              ))}
-            </ul>
-          </nav>
-
-          <button 
-            className="mobile-nav-toggle" 
-            onClick={handleNavMobile}
-            aria-label={menu ? "Close menu" : "Open menu"}
-          >
-            <i className={`bi bi-${menu ? "x" : "list"}`}></i>
-          </button>
-        </div>
-
-        <div className="hero-content">
-          <div className="hero-wrapper">
-            <div className="text-top">
-              <span className="wave">👋 </span> Hi, my name is Kolade Oluwadara and I'm a
-            </div>
-            <div className="text-role">
-              <div className="role-title">Software</div>
-              <div className="role-subtitle">Engineer</div>
-            </div>
-            <div className="social-links">
-              <SocialLinksItem name="github" url="https://github.com/kolade082" />
-              <SocialLinksItem
-                name="instagram"
-                url="https://www.instagram.com/kolade_oo/"
-              />
-              <SocialLinksItem
-                name="linkedin"
-                url="https://www.linkedin.com/in/kolade-oluwadara-87563a245/"
-              />
-              <SocialLinksItem name="envelope" url="koladedara@outlook.com" />
-            </div>
+          <div className="hero-social">
+            <a href="https://github.com/kolade082" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <i className="bi bi-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/kolade-oluwadara-87563a245/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i className="bi bi-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/kolade_oo/" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <i className="bi bi-instagram"></i>
+            </a>
+            <a href="mailto:koladedara@outlook.com" title="Email">
+              <i className="bi bi-envelope"></i>
+            </a>
           </div>
         </div>
+        <div className="hero-visual">
+          <div className="hero-image-wrapper">
+            <img src={profileImg} alt="Kolade Oluwadara" className="profile-image" />
+          </div>
+        </div>
+      </div>
+      <div className="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div className="scroll-arrow">↓</div>
       </div>
     </header>
   );

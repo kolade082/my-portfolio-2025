@@ -1,105 +1,70 @@
-import React, { useState, useEffect } from "react";
-import "./portfolio.css";
-import SectionTitle from "../components/SectionTitle";
-import PortfolioItem from "../components/PortfolioItem";
+import React, { useState, useEffect } from 'react';
+import './portfolio.css';
 
-function Portfolio({ reference }) {
+function Portfolio() {
   const [portfolio, setPortfolio] = useState([]);
-  const [data, setData] = useState([]);
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState('all');
 
-  const fetchData = () => {
+  useEffect(() => {
     fetch(`${process.env.PUBLIC_URL}/api/portfolioData.json`)
       .then((res) => res.json())
-      .then((data) => {
-        setPortfolio(data);
-      })
-      .catch((e) => console.error("Error fetching portfolio data:", e.message));
-  };
-
-  useEffect(() => {
-    fetchData();
+      .then((data) => setPortfolio(data))
+      .catch((e) => console.error('Error fetching portfolio data:', e.message));
   }, []);
 
-  useEffect(() => {
-    if (activeFilter === "all") {
-      setData(portfolio);
-    } else {
-      const filteredData = portfolio.filter(
-        (item) => item.type === activeFilter
-      );
-      setData(filteredData);
-    }
-  }, [portfolio, activeFilter]);
-
-  const handleFilterClick = (filter) => {
-    setActiveFilter(filter);
-  };
-
-  // Split data for 'all' view
-  const webProjects = data.filter(item => item.type !== "mobile");
-  const mobileProjects = data.filter(item => item.type === "mobile");
+  const filteredData = activeFilter === 'all' 
+    ? portfolio 
+    : portfolio.filter((item) => item.type === activeFilter);
 
   return (
-    <section id="portfolio" className="portfolio" ref={reference}>
+    <section id="portfolio" className="portfolio">
       <div className="container">
-        <SectionTitle title="Portfolio" subtitle="Explore My Work" />
-
-        <div className="portfolio-filters">
-          <ul id="portfolio-filters">
-            <li
-              className={activeFilter === "all" ? "filter-active" : ""}
-              onClick={() => handleFilterClick("all")}
-            >
-              All
-            </li>
-            <li
-              className={activeFilter === "web" ? "filter-active" : ""}
-              onClick={() => handleFilterClick("web")}
-            >
-              Web
-            </li>
-            <li
-              className={activeFilter === "mobile" ? "filter-active" : ""}
-              onClick={() => handleFilterClick("mobile")}
-            >
-              Mobile
-            </li>
-          </ul>
+        <div className="section-header">
+          <h2>Portfolio</h2>
+          <p>Featured Work</p>
         </div>
 
-        {activeFilter === "all" ? (
-          <>
-            <h3 className="portfolio-group-heading">Web Applications</h3>
-            <div className="row portfolio-container" style={{ marginBottom: "2rem" }}>
-              {webProjects.length > 0 ? (
-                webProjects.map(item => (
-                  <PortfolioItem key={item._id} item={item} />
-                ))
-              ) : (
-                <p className="text-center">No web projects to display.</p>
-              )}
-            </div>
-            <h3 className="portfolio-group-heading">Mobile Projects</h3>
-            <div className="row portfolio-container">
-              {mobileProjects.length > 0 ? (
-                mobileProjects.map(item => (
-                  <PortfolioItem key={item._id} item={item} />
-                ))
-              ) : (
-                <p className="text-center">No mobile projects to display.</p>
-              )}
-            </div>
-          </>
-        ) : (
-          <div className="row portfolio-container">
-            {data && data.length > 0 ? (
-              data.map((item) => <PortfolioItem key={item._id} item={item} />)
-            ) : (
-              <p className="text-center">No portfolio items to display.</p>
-            )}
-          </div>
-        )}
+        <div className="portfolio-filters">
+          {['all', 'web', 'mobile'].map((filter) => (
+            <button
+              key={filter}
+              className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+              onClick={() => setActiveFilter(filter)}
+            >
+              {filter.charAt(0).toUpperCase() + filter.slice(1)}
+            </button>
+          ))}
+        </div>
+
+        <div className="portfolio-grid">
+          {filteredData.length > 0 ? (
+            filteredData.map((item) => (
+              <div key={item._id} className="portfolio-card">
+                <div className="portfolio-image">
+                  <img src={`${process.env.PUBLIC_URL}${item.img}`} alt={item.title} />
+                  {item.link && (
+                    <div className="portfolio-overlay">
+                      <a href={item.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        View Project
+                      </a>
+                    </div>
+                  )}
+                </div>
+                <div className="portfolio-info">
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                  <div className="portfolio-tags">
+                    {item.tools && item.tools.map((t) => (
+                      <span key={t} className="tag">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="no-projects">No projects to display.</p>
+          )}
+        </div>
       </div>
     </section>
   );
