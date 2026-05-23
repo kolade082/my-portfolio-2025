@@ -1,0 +1,82 @@
+/* Global Styles for Modern Vintage Portfolio */
+
+:root {
+  --color-bg-main: #fdfaf3; /* Warm off-white */
+  --color-bg-secondary: #f4ede1; /* Beige */
+  --color-text-main: #3a322c; /* Charcoal */
+  --color-accent: #bda27e; /* Muted gold */
+  --color-heading: #332d26; /* Deep brown */
+  --color-highlight: #edd2a4; /* Sepia */
+  --color-dark-bg: #1c1a19; /* Warm dark mode background */
+  --color-dark-text: #ded8c7; /* Light text on dark background */
+  
+  --font-serif: 'Lora', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --spacing: 1rem;
+  --border-radius: 8px;
+  --transition: 300ms ease;
+}
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-main);
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-serif);
+  color: var(--color-heading);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-highlight);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+.btn {
+  background-color: var(--color-accent);
+  color: var(--color-bg-main);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--color-highlight);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-dark-text);
+  }
+
+  a {
+    color: var(--color-highlight);
+  }
+}
